@@ -25,7 +25,9 @@ app.use((req, res, next) => {
   console.log(`[${new Date().toISOString()}] ${req.method} ${req.url}`);
   next();
 });
-
+app.get("/", (req,res) => {
+  return res.send("Welcome to home page")
+})
 app.post("/first-unique-character", (req, res) => {
   try {
     const { text_to_process } = req.body;
